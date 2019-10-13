@@ -15,10 +15,22 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="120dp"
         android:background="@drawable/selected_card"
+        android:fontFamily="sans-serif"
         android:gravity="center"
-        android:textSize="120sp"
+        android:textColor="#FFFFFF"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

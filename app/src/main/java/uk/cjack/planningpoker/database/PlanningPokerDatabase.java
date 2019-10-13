@@ -5,13 +5,16 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import uk.cjack.planningpoker.database.dao.CardDao;
-import uk.cjack.planningpoker.database.entities.Card;
+import uk.cjack.planningpoker.database.dao.CardConfigDao;
+import uk.cjack.planningpoker.database.dao.ConfigDao;
+import uk.cjack.planningpoker.database.entities.CardConfig;
+import uk.cjack.planningpoker.database.entities.Config;
 
-@Database(entities = { Card.class }, version = 1)
+@Database(entities = { CardConfig.class, Config.class }, version = 1)
 public abstract class PlanningPokerDatabase extends RoomDatabase {
 
-    public abstract CardDao cardDao();
+    public abstract CardConfigDao cardConfigDao();
+    public abstract ConfigDao configDao();
 //    public abstract ActivityDao activityDao();
 
     private static volatile PlanningPokerDatabase INSTANCE;

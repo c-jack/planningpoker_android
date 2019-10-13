@@ -8,12 +8,10 @@
 
     <TextView
         android:id="@+id/tv_card_select_item"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        android:background="@drawable/card_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:elevation="30dp"
         android:gravity="center"
         android:maxLines="1"
-        android:padding="10dp"
-        app:autoSizeTextType="uniform" />
+        android:textSize="14sp" />
 </LinearLayout>

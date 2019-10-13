@@ -2,39 +2,80 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "27d4288f92abe7846b69607db7ac41df",
+    "identityHash": "dc1a9eb680291c56a8b6bcde529de52c",
     "entities": [
       {
-        "tableName": "baby_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`babyId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `babyName` TEXT NOT NULL)",
+        "tableName": "card_config",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cardConfigId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cardConfigName` TEXT NOT NULL)",
         "fields": [
           {
-            "fieldPath": "babyId",
-            "columnName": "babyId",
+            "fieldPath": "cardConfigId",
+            "columnName": "cardConfigId",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "babyName",
-            "columnName": "babyName",
+            "fieldPath": "cardConfigName",
+            "columnName": "cardConfigName",
             "affinity": "TEXT",
             "notNull": true
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "babyId"
+            "cardConfigId"
           ],
           "autoGenerate": true
         },
         "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "config",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`configId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `configKey` TEXT NOT NULL, `configValue` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "configId",
+            "columnName": "configId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configKey",
+            "columnName": "configKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configValue",
+            "columnName": "configValue",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "configId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_config_configKey",
+            "unique": true,
+            "columnNames": [
+              "configKey"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_config_configKey` ON `${TABLE_NAME}` (`configKey`)"
+          }
+        ],
         "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '27d4288f92abe7846b69607db7ac41df')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dc1a9eb680291c56a8b6bcde529de52c')"
     ]
   }
 }

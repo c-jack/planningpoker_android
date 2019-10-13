@@ -5,7 +5,7 @@ import java.util.List;
 
 public enum PokerScalesEnum {
     FIBONACCI( Arrays.asList( "0", "0.5", "1", "2", "3", "5", "8", "13", "20", "40", "100",
-            "∞", "{coffee}", "?" ) ),
+            ":infinity:", ":coffee:", ":question:", ":toilet:" ) ),
     TSHIRT( Arrays.asList( "XXS", "XS", "S", "M", "L", "XL", "XXL" ) );
 
     private final List<String> pokerScale;
